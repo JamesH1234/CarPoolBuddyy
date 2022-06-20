@@ -2,6 +2,7 @@ package com.example.carpoolbuddyy.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -25,11 +26,12 @@ public class VehicleInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_vehicle_info);
     }
 
-    void getAndPopulateData(){
+    public void getAndPopulateData(){
 
     }
 
-    void goToAddVehicle(View v) {
-
+    public void goToAddVehicle(View v) {
+        Intent addVehicleActivity = new Intent(getBaseContext(), AddVehicleActivity.class);
+        startActivity(addVehicleActivity);
     }
 }

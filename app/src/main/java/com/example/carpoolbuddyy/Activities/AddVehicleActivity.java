@@ -10,17 +10,12 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 
-import com.example.carpoolbuddyy.Models.Users.Alumni;
-import com.example.carpoolbuddyy.Models.Users.Parent;
-import com.example.carpoolbuddyy.Models.Users.Student;
-import com.example.carpoolbuddyy.Models.Users.Teacher;
 import com.example.carpoolbuddyy.Models.Vehicles.Bicycle;
 import com.example.carpoolbuddyy.Models.Vehicles.Car;
 import com.example.carpoolbuddyy.Models.Vehicles.Helicopter;
 import com.example.carpoolbuddyy.Models.Vehicles.Segway;
 import com.example.carpoolbuddyy.R;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -52,8 +47,8 @@ public class AddVehicleActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
-        layout = findViewById(R.id.layout);
-        spinner = findViewById(R.id.spinner);
+        layout = findViewById(R.id.layout2);
+        spinner = findViewById(R.id.spinner2);
 
         createSpinner();
 
@@ -140,7 +135,7 @@ public class AddVehicleActivity extends AppCompatActivity {
         return true;
     }
 
-    void addNewVehicle() {
+    public void addNewVehicle(View v) {
         String owner = ownerField.getText().toString();
         String model = modelField.getText().toString();
         int capacity = Integer.parseInt(capacityField.getText().toString());

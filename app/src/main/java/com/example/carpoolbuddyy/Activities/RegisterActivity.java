@@ -169,7 +169,7 @@ public class RegisterActivity extends AppCompatActivity {
         switch(selection) {
             case "Student":
                 int gradYearStudent = Integer.parseInt(gradYearField.getText().toString());
-                Student addStudent = new Student(uid, email, name, selection, 1.0, new ArrayList<String>(), gradYearStudent, new ArrayList<String>());
+                Student addStudent = new Student(uid, name, email, selection, 1.0, new ArrayList<String>(), gradYearStudent, new ArrayList<String>());
                 newUser.set(addStudent);
                 break;
             case "Teacher":
@@ -179,7 +179,7 @@ public class RegisterActivity extends AppCompatActivity {
                 break;
             case "Alumni":
                 int gradYearAlumni = Integer.parseInt(gradYearField.getText().toString());
-                Alumni addAlumni = new Alumni(uid, email, name, selection, 1.0, new ArrayList<String>(), gradYearAlumni);
+                Alumni addAlumni = new Alumni(uid, name, email, selection, 1.0, new ArrayList<String>(), gradYearAlumni);
                 newUser.set(addAlumni);
                 break;
             case "Parent":
@@ -188,7 +188,7 @@ public class RegisterActivity extends AppCompatActivity {
                 for(int i = 0; i < childrenArr.length; i++) {
                     children.add(childrenArr[i]);
                 }
-                Parent addParent = new Parent(uid, email, name, selection, 1.0, new ArrayList<>(), children);
+                Parent addParent = new Parent(uid, name, email, selection, 1.0, new ArrayList<>(), children);
                 newUser.set(addParent);
                 break;
         }

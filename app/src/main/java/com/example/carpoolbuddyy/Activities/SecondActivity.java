@@ -21,8 +21,8 @@ public class SecondActivity extends AppCompatActivity {
         startActivity(userProfileActivity);
     }
 
-    public void toVehicleProfActivity(View v) {
-        Intent vehicleProfileActivity = new Intent(getBaseContext(), VehicleProfileActivity.class);
-        startActivity(vehicleProfileActivity);
+    public void toVehicleInfoActivity(View v) {
+        Intent vehicleInfoActivity = new Intent(getBaseContext(), VehicleInfoActivity.class);
+        startActivity(vehicleInfoActivity);
     }
 }
