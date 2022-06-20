@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.carpoolbuddyy.Models.Users.Alumni;
 import com.example.carpoolbuddyy.Models.Users.Parent;
@@ -61,10 +62,10 @@ public class RegisterActivity extends AppCompatActivity {
         emailField = findViewById(R.id.EmailField);
         passwordField = findViewById(R.id.PasswordField);
 
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            updateUI(currentUser);
-        }
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        if(currentUser != null){
+//            updateUI(currentUser);
+//        }
     }
 
     private void createSpinner() {
@@ -153,11 +154,12 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
-                    Log.d("SIGN UP", "Successfully signed up the user");
+                    Log.d("SIGN UP", "successfully signed up the user");
                     FirebaseUser user = mAuth.getCurrentUser();
                     updateUI(user);
-                } else {
-                    Log.w("SIGN UP", "signInWithEmail:failure", task.getException());
+                }
+                else {
+                    Log.d("SIGN UP", "createUserWithEmail:failure", task.getException());
                     updateUI(null);
                 }
             }
@@ -192,9 +194,11 @@ public class RegisterActivity extends AppCompatActivity {
                 newUser.set(addParent);
                 break;
         }
+        FirebaseUser user = mAuth.getCurrentUser();
+        updateUI(user);
     }
 
-    void updateUI(FirebaseUser user) {
+    public void updateUI(FirebaseUser user) {
         if(user != null) {
             Intent intent = new Intent(this, SecondActivity.class);
             startActivity(intent);

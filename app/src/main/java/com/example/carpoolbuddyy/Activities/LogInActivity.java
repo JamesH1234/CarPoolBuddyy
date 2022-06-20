@@ -37,11 +37,6 @@ public class LogInActivity extends AppCompatActivity {
 
         emailField = findViewById(R.id.EmailField);
         passwordField = findViewById(R.id.PasswordField);
-
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            reload();
-        }
     }
 
     public void reload() {
@@ -69,7 +64,7 @@ public class LogInActivity extends AppCompatActivity {
                     FirebaseUser user = mAuth.getCurrentUser();
                     updateUI(user);
                 } else {
-                    Log.w("SIGNIN SUCESSFULL", "signInWithEmail:failure", task.getException());
+                    Log.w("SIGNIN FAILURE", "signInWithEmail:failure", task.getException());
                     updateUI(null);
                 }
             }

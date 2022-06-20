@@ -79,16 +79,16 @@ public class AddVehicleActivity extends AppCompatActivity {
     private void defaultFields() {
         layout.removeAllViewsInLayout();
         ownerField = new EditText(this);
-        ownerField.setHint("Email");
+        ownerField.setHint("Owner");
         layout.addView(ownerField);
         modelField = new EditText(this);
-        modelField.setHint("Password");
+        modelField.setHint("Model");
         layout.addView(modelField);
         capacityField = new EditText(this);
-        capacityField.setHint("Name");
+        capacityField.setHint("Capacity");
         layout.addView(capacityField);
         basePriceField = new EditText(this);
-        basePriceField.setHint("Name");
+        basePriceField.setHint("Base Price");
         layout.addView(basePriceField);
     }
 
